@@ -17,13 +17,8 @@ public class PersonController {
     }
 
     @PostMapping
-    public Person createPerson(
-            @RequestParam String id,
-            @RequestParam String firstName,
-            @RequestParam String lastName,
-            @RequestParam String dateOfBirth
-    ) {
-        return personService.createPerson(id, firstName, lastName, dateOfBirth);
+    public Person createPerson(@RequestBody Person person) {
+        return personService.createPerson(person);
     }
 
     @GetMapping

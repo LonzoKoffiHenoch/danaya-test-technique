@@ -12,8 +12,7 @@ public class PersonServiceImpl implements PersonService {
 
 
     @Override
-    public Person createPerson(String id, String firstName, String lastName, String dateOfBirth) {
-        Person person = new Person(id, firstName, lastName, dateOfBirth);
+    public Person createPerson(Person person) {
         persons.add(person);
         return person;
     }

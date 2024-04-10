@@ -28,8 +28,9 @@ public class PersonServiceTest {
         String firstName = "John";
         String lastName = "Doe";
         String dateOfBirth = "1990-01-01";
+        Person person = new Person(id, firstName, lastName, dateOfBirth);
 
-        Person createdPerson = personService.createPerson(id, firstName, lastName, dateOfBirth);
+        Person createdPerson = personService.createPerson(person);
 
         List<Person> persons = personService.getAllPersons();
         assertEquals(1, persons.size());
@@ -43,7 +44,9 @@ public class PersonServiceTest {
         String firstName = "John";
         String lastName = "Doe";
         String dateOfBirth = "1990-01-01";
-        personService.createPerson(id, firstName, lastName, dateOfBirth);
+        Person person = new Person(id, firstName, lastName, dateOfBirth);
+
+        personService.createPerson(person);
 
         // When
         List<Person> persons = personService.getAllPersons();
